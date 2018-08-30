@@ -8,7 +8,7 @@ import sys
 # the columns and their gdp data becomes the rows
 
 # read data into a pandas dataframe and transpose
-file_list=sys.argv[1:]
+file_list = sys.argv[1:]
 for filename in file_list:
      data = pandas.read_csv(filename, index_col = 'country').T
 
