@@ -10,8 +10,18 @@ import glob
 
 # read data into pandas dataframe and transpose
 
+if len(sys.argv) ==1:
+    #no arguments supplied 
+    print ("not enough arguments have been provided")
+    print("Usage: python gdp_plots.py <filenames>")
+    print("Options: -a: plot all gdp data in current directory")
+    exit()
+
 if sys.argv[1] == '-a' :
     file_list = glob.glob("*gdp*.csv")
+    if len(file_list) == 0 :
+        print("no files found in current directory")
+   
 else:
     file_list = sys.argv[1:]
 for filename in file_list:
